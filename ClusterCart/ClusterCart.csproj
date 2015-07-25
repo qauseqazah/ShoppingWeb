@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B73259A5-F87E-4AD2-B6D9-8DDB0BFED9BD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClusterCart</RootNamespace>
+    <AssemblyName>ClusterCart</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.1\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="AddToCart.aspx" />
+    <Content Include="Admin\AdminPage.aspx" />
+    <Content Include="App_Data\ClusterCart.mdf" />
+    <Content Include="App_Data\ClusterCart_log.ldf">
+      <DependentUpon>ClusterCart.mdf</DependentUpon>
+    </Content>
+    <Content Include="Catalog\Images\100-degreez-1949-219661-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ajmal-4575-258511-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ajmal-5533-5755441-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ajmal-5536-6755441-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ajmal-5541-8755441-1-zoom.jpg" />
+    <Content Include="Catalog\Images\alphatronix-6057-2500833-1-zoom.jpg" />
+    <Content Include="Catalog\Images\anex-4513-4272753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\anex-4593-2572753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\anex-4606-8572753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\annabelles-3744-399041-1-zoom.jpg" />
+    <Content Include="Catalog\Images\apple-2104-813251-1-zoom.jpg" />
+    <Content Include="Catalog\Images\apple-3433-7537953-1-zoom.jpg" />
+    <Content Include="Catalog\Images\arj-5693-0072281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\arj-9233-4962281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\aybeez-3200-276221-1-zoom.jpg" />
+    <Content Include="Catalog\Images\aybeez-7607-172801-1-zoom.jpg" />
+    <Content Include="Catalog\Images\bear-necessities-1463-337281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\bear-necessities-2812-347281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\bear-necessities-2819-447281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-5299-524478-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-5316-334478-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-5336-434478-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-5369-534478-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-6755-373041-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-6870-063041-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-8598-673041-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-8745-152901-1-zoom.jpg" />
+    <Content Include="Catalog\Images\blossom-9430-691261-1-zoom.jpg" />
+    <Content Include="Catalog\Images\calvin-klein-0288-65769-1-zoom.jpg" />
+    <Content Include="Catalog\Images\canon-3640-146851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\canon-4105-066851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\canon-4293-886851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\canon-6161-946851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\canon-9562-416851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\carrera-4097-00988-1-zoom.jpg" />
+    <Content Include="Catalog\Images\chairman-0512-7037042-1-zoom.jpg" />
+    <Content Include="Catalog\Images\claire-s-1472-0182791-1-zoom.jpg" />
+    <Content Include="Catalog\Images\claire-s-1538-1192791-1-zoom.jpg" />
+    <Content Include="Catalog\Images\cocoon-5884-9740173-1-zoom.jpg" />
+    <Content Include="Catalog\Images\cocoon-5891-2840173-1-zoom.jpg" />
+    <Content Include="Catalog\Images\coventry-4981-420741-1-zoom.jpg" />
+    <Content Include="Catalog\Images\coventry-5017-820741-1-zoom.jpg" />
+    <Content Include="Catalog\Images\crabtree-and-evelyn-7673-13643-1-zoom.jpg" />
+    <Content Include="Catalog\Images\dany-2636-9421763-1-zoom.jpg" />
+    <Content Include="Catalog\Images\davidoff-9318-39139-2-zoom.jpg" />
+    <Content Include="Catalog\Images\ego-5186-8758123-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ego-5197-0858123-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ego-5203-0679653-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ego-5216-1679653-1-zoom.jpg" />
+    <Content Include="Catalog\Images\fuji-film-8507-427561-1-zoom.jpg" />
+    <Content Include="Catalog\Images\guess-2596-42706-1-zoom.jpg" />
+    <Content Include="Catalog\Images\guess-3459-77651-1-zoom.jpg" />
+    <Content Include="Catalog\Images\guess-3677-27651-1-zoom.jpg" />
+    <Content Include="Catalog\Images\guess-9476-98139-2-zoom.jpg" />
+    <Content Include="Catalog\Images\hanson-leather-7696-171971-1-zoom.jpg" />
+    <Content Include="Catalog\Images\head-8573-88306-1-zoom.jpg" />
+    <Content Include="Catalog\Images\hkt-9396-2731763-1-zoom.jpg" />
+    <Content Include="Catalog\Images\homage-0817-9093753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\house-of-leather-6753-398961-1-zoom.jpg" />
+    <Content Include="Catalog\Images\huawei-2721-3922281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\infinix-0755-3596463-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ingenious-gadgets-0120-8950173-1-zoom.jpg" />
+    <Content Include="Catalog\Images\innjoo-5324-0194563-1-zoom.jpg" />
+    <Content Include="Catalog\Images\jump-4515-72745-1-zoom.jpg" />
+    <Content Include="Catalog\Images\jump-4522-52745-1-zoom.jpg" />
+    <Content Include="Catalog\Images\jump-4691-58645-1-zoom.jpg" />
+    <Content Include="Catalog\Images\jump-8055-97645-1-zoom.jpg" />
+    <Content Include="Catalog\Images\junaid-jamshed-3809-635731-1-zoom %281%29.jpg" />
+    <Content Include="Catalog\Images\junaid-jamshed-3809-635731-1-zoom.jpg" />
+    <Content Include="Catalog\Images\k-b-cutlery-1278-2496163-1-zoom.jpg" />
+    <Content Include="Catalog\Images\karachi-wearhouse-5112-311221-1-zoom.jpg" />
+    <Content Include="Catalog\Images\karachi-wearhouse-9877-719161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\kenwood-6515-1193753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\kenwood-6527-3393753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\living-basics-3167-574051-1-zoom %281%29.jpg" />
+    <Content Include="Catalog\Images\living-basics-3167-574051-1-zoom.jpg" />
+    <Content Include="Catalog\Images\living-basics-8992-784051-2-zoom.jpg" />
+    <Content Include="Catalog\Images\malizia-2255-16206-1-zoom.jpg" />
+    <Content Include="Catalog\Images\nikon-0856-7413001-1-zoom.jpg" />
+    <Content Include="Catalog\Images\nikon-4757-419161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\nikon-8645-069161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\nimra-k-5382-2151541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\nimra-k-5394-3151541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\nimra-k-5470-9151541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\nimra-k-5498-1251541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\nimra-k-5564-6251541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\noor-fashionz-9567-7317443-1-zoom.jpg" />
+    <Content Include="Catalog\Images\one-hundred-ten-0957-718931-1-zoom.jpg" />
+    <Content Include="Catalog\Images\one-hundred-ten-4152-748771-1-zoom.jpg" />
+    <Content Include="Catalog\Images\orient-2849-912451-1-zoom.jpg" />
+    <Content Include="Catalog\Images\promate-0897-7041763-1-zoom.jpg" />
+    <Content Include="Catalog\Images\promate-3755-8571073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\promate-7716-7231763-1-zoom.jpg" />
+    <Content Include="Catalog\Images\qmobile-8344-6313281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ray-ban-2792-42707-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ray-ban-6125-710161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ray-ban-6129-020161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ray-ban-6139-720161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ray-ban-6190-360161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ray-ban-6250-701161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\ray-ban-9129-5389-1-zoom.jpg" />
+    <Content Include="Catalog\Images\rob-hayes-0865-05783-1-zoom.jpg" />
+    <Content Include="Catalog\Images\rob-hayes-1512-07467-1-zoom.jpg" />
+    <Content Include="Catalog\Images\rob-hayes-1520-17467-1-zoom.jpg" />
+    <Content Include="Catalog\Images\rob-hayes-1538-57467-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-2861-5352663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-2869-6352663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-2898-8352663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-4528-5652663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-7741-2452663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-7775-6452663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-7788-8452663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-7811-1552663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\s-s-collection-7820-2552663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\samsung-0841-3670541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\samsung-4982-653551-1-zoom.jpg" />
+    <Content Include="Catalog\Images\samsung-7965-735321-1-zoom.jpg" />
+    <Content Include="Catalog\Images\samsung-8082-112521-1-zoom.jpg" />
+    <Content Include="Catalog\Images\seiko-0750-399271-1-zoom.jpg" />
+    <Content Include="Catalog\Images\seiko-0774-600371-1-zoom.jpg" />
+    <Content Include="Catalog\Images\seiko-0903-679271-1-zoom.jpg" />
+    <Content Include="Catalog\Images\shubinak-9044-23346-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sigma-4876-8945063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sinbo-8650-3234563-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sinbo-8766-8534563-1-zoom.jpg" />
+    <Content Include="Catalog\Images\skins-8926-10035-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sok-plastic-2073-0420391-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sony-0526-760261-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sony-0775-53126-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sony-1348-619511-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sony-3905-725851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sony-9812-525851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\swan-2371-502931-1-zoom.jpg" />
+    <Content Include="Catalog\Images\swatch-1538-69845-1-zoom.jpg" />
+    <Content Include="Catalog\Images\swatch-1739-98845-1-zoom.jpg" />
+    <Content Include="Catalog\Images\swatch-2914-73053-1-zoom.jpg" />
+    <Content Include="Catalog\Images\sweet-16-5805-078561-1-zoom.jpg" />
+    <Content Include="Catalog\Images\the-body-shop-6609-289061-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\100-degreez-1949-219661-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ajmal-4575-258511-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ajmal-5533-5755441-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ajmal-5536-6755441-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ajmal-5541-8755441-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\alphatronix-6057-2500833-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\anex-4513-4272753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\anex-4593-2572753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\anex-4606-8572753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\annabelles-3744-399041-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\apple-2104-813251-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\apple-3433-7537953-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\arj-5693-0072281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\arj-9233-4962281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\aybeez-3200-276221-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\aybeez-7607-172801-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\bear-necessities-1463-337281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\bear-necessities-2812-347281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\bear-necessities-2819-447281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-5299-524478-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-5316-334478-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-5336-434478-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-5369-534478-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-6755-373041-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-6870-063041-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-8598-673041-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-8745-152901-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\blossom-9430-691261-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\calvin-klein-0288-65769-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\canon-3640-146851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\canon-4105-066851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\canon-4293-886851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\canon-6161-946851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\canon-9562-416851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\carrera-4097-00988-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\chairman-0512-7037042-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\claire-s-1472-0182791-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\claire-s-1538-1192791-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\cocoon-5884-9740173-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\cocoon-5891-2840173-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\coventry-4981-420741-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\coventry-5017-820741-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\crabtree-and-evelyn-7673-13643-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\dany-2636-9421763-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\davidoff-9318-39139-2-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ego-5186-8758123-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ego-5197-0858123-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ego-5203-0679653-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ego-5216-1679653-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\fuji-film-8507-427561-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\guess-2596-42706-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\guess-3459-77651-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\guess-3677-27651-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\guess-9476-98139-2-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\hanson-leather-7696-171971-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\head-8573-88306-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\hkt-9396-2731763-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\homage-0817-9093753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\house-of-leather-6753-398961-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\huawei-2721-3922281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\infinix-0755-3596463-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ingenious-gadgets-0120-8950173-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\innjoo-5324-0194563-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\jump-4515-72745-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\jump-4522-52745-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\jump-4691-58645-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\jump-8055-97645-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\junaid-jamshed-3809-635731-1-zoom %281%29.jpg" />
+    <Content Include="Catalog\Images\Thumbs\junaid-jamshed-3809-635731-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\k-b-cutlery-1278-2496163-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\karachi-wearhouse-5112-311221-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\karachi-wearhouse-9877-719161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\kenwood-6515-1193753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\kenwood-6527-3393753-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\living-basics-3167-574051-1-zoom %281%29.jpg" />
+    <Content Include="Catalog\Images\Thumbs\living-basics-3167-574051-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\living-basics-8992-784051-2-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\malizia-2255-16206-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\nikon-0856-7413001-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\nikon-4757-419161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\nikon-8645-069161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\nimra-k-5382-2151541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\nimra-k-5394-3151541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\nimra-k-5470-9151541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\nimra-k-5498-1251541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\nimra-k-5564-6251541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\noor-fashionz-9567-7317443-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\one-hundred-ten-0957-718931-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\one-hundred-ten-4152-748771-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\orient-2849-912451-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\promate-0897-7041763-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\promate-3755-8571073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\promate-7716-7231763-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\qmobile-8344-6313281-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ray-ban-2792-42707-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ray-ban-6125-710161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ray-ban-6129-020161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ray-ban-6139-720161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ray-ban-6190-360161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ray-ban-6250-701161-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\ray-ban-9129-5389-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\rob-hayes-0865-05783-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\rob-hayes-1512-07467-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\rob-hayes-1520-17467-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\rob-hayes-1538-57467-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-2861-5352663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-2869-6352663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-2898-8352663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-4528-5652663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-7741-2452663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-7775-6452663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-7788-8452663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-7811-1552663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\s-s-collection-7820-2552663-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\samsung-0841-3670541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\samsung-4982-653551-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\samsung-7965-735321-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\samsung-8082-112521-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\seiko-0750-399271-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\seiko-0774-600371-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\seiko-0903-679271-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\shubinak-9044-23346-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sigma-4876-8945063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sinbo-8650-3234563-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sinbo-8766-8534563-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\skins-8926-10035-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sok-plastic-2073-0420391-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sony-0526-760261-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sony-0775-53126-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sony-1348-619511-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sony-3905-725851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sony-9812-525851-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\swan-2371-502931-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\swatch-1538-69845-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\swatch-1739-98845-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\swatch-2914-73053-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\sweet-16-5805-078561-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\the-body-shop-6609-289061-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\timex-2774-1515063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\timex-2782-9515063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\timex-2788-1615063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\timex-2808-7615063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\timex-2812-8615063-1-zoom %281%29.jpg" />
+    <Content Include="Catalog\Images\Thumbs\timex-2812-8615063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\tissot-6568-29611-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\tna-collections-0099-083771-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\todd-davis-1155-771541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\torch-5947-683701-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\touchmate-1125-028471-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\travel_blue-1905-2010331-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\trendy-homes-4066-5848802-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\vogue-2115-21991-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\vogue-7010-59891-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\vogue-7983-44991-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\vogue-8087-89891-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\vogue-8522-88891-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\westar-1090-172071-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\westpoint-0446-9491073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\westpoint-5726-2202073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\westpoint-5818-1402073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\Thumbs\westpoint-5825-3402073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\timex-2774-1515063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\timex-2782-9515063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\timex-2788-1615063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\timex-2808-7615063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\timex-2812-8615063-1-zoom %281%29.jpg" />
+    <Content Include="Catalog\Images\timex-2812-8615063-1-zoom.jpg" />
+    <Content Include="Catalog\Images\tissot-6568-29611-1-zoom.jpg" />
+    <Content Include="Catalog\Images\tna-collections-0099-083771-1-zoom.jpg" />
+    <Content Include="Catalog\Images\todd-davis-1155-771541-1-zoom.jpg" />
+    <Content Include="Catalog\Images\torch-5947-683701-1-zoom.jpg" />
+    <Content Include="Catalog\Images\touchmate-1125-028471-1-zoom.jpg" />
+    <Content Include="Catalog\Images\travel_blue-1905-2010331-1-zoom.jpg" />
+    <Content Include="Catalog\Images\trendy-homes-4066-5848802-1-zoom.jpg" />
+    <Content Include="Catalog\Images\vogue-2115-21991-1-zoom.jpg" />
+    <Content Include="Catalog\Images\vogue-7010-59891-1-zoom.jpg" />
+    <Content Include="Catalog\Images\vogue-7983-44991-1-zoom.jpg" />
+    <Content Include="Catalog\Images\vogue-8087-89891-1-zoom.jpg" />
+    <Content Include="Catalog\Images\vogue-8522-88891-1-zoom.jpg" />
+    <Content Include="Catalog\Images\westar-1090-172071-1-zoom.jpg" />
+    <Content Include="Catalog\Images\westpoint-0446-9491073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\westpoint-5726-2202073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\westpoint-5818-1402073-1-zoom.jpg" />
+    <Content Include="Catalog\Images\westpoint-5825-3402073-1-zoom.jpg" />
+    <Content Include="Checkout\CheckoutCancel.aspx" />
+    <Content Include="Checkout\CheckoutComplete.aspx" />
+    <Content Include="Checkout\CheckoutError.aspx" />
+    <Content Include="Checkout\CheckoutReview.aspx" />
+    <Content Include="Checkout\CheckoutStart.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-original.css" />
+    <Content Include="Content\bootstrap-original.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Logic\AddProducts.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Checkout\Web.config" />
+    <Content Include="Admin\Web.config" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="ProductDetails.aspx" />
+    <Content Include="ProductList.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="ShoppingCart.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddToCart.aspx.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddToCart.aspx.designer.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminPage.aspx.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminPage.aspx.designer.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Checkout\CheckoutCancel.aspx.cs">
+      <DependentUpon>CheckoutCancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutCancel.aspx.designer.cs">
+      <DependentUpon>CheckoutCancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout\CheckoutComplete.aspx.cs">
+      <DependentUpon>CheckoutComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutComplete.aspx.designer.cs">
+      <DependentUpon>CheckoutComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout\CheckoutError.aspx.cs">
+      <DependentUpon>CheckoutError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutError.aspx.designer.cs">
+      <DependentUpon>CheckoutError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout\CheckoutReview.aspx.cs">
+      <DependentUpon>CheckoutReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutReview.aspx.designer.cs">
+      <DependentUpon>CheckoutReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout\CheckoutStart.aspx.cs">
+      <DependentUpon>CheckoutStart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout\CheckoutStart.aspx.designer.cs">
+      <DependentUpon>CheckoutStart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\AddProducts.aspx.cs">
+      <DependentUpon>AddProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logic\AddProducts.aspx.designer.cs">
+      <DependentUpon>AddProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\RoleAction.cs" />
+    <Compile Include="Logic\ShoppingCartAction.cs" />
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductContext.cs" />
+    <Compile Include="Models\ProductDatabaseInitializer.cs" />
+    <Compile Include="ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55139</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55139/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
